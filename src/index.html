@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      background-color: #eff0f3;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #0d0d0d;
+    }
+    button, input {
+      border-radius: 4px;
+    }
+  </style>
+  <title>Saudações</title>
+</head>
+<body>
+  <h1>Saudações</h1>
+  <label for="name">Nome:</label>
+  <input type="text" aria-label="name" value="João" autofocus>
+  <button id="ok-btn">Enviar</button>
+  <script>
+    const body = document.querySelector('body')
+    const nameField = document.querySelector('input[type="text"]')
+    const okButton = document.getElementById('ok-btn')
+    nameField.addEventListener('blur', blurHandler)
+    function blurHandler(event) {
+      okButton.addEventListener('click', clickHandler)
+      function clickHandler() {
+        const name = event.target.value
+        const paragraph = document.createElement('p')
+        const text = document.createTextNode(`Oi ${name}!`)
+        paragraph.appendChild(text)
+        body.appendChild(paragraph)
+        nameField.value = ''
+        okButton.removeEventListener('click', clickHandler)
+      }
+      nameField.removeEventListener('blur', blurHandler)
+    }
+  </script>
+</body>
+</html>

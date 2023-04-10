@@ -1,0 +1,27 @@
+{
+  "name": "cy-eslint-example",
+  "version": "1.0.0",
+  "description": "Sample project to demonstrate the rules of eslint-plugin-cypress.",
+  "main": "cypress.config.js",
+  "scripts": {
+    "lint": "eslint cypress/e2e/*.cy.js",
+    "lint:fix": "eslint cypress/e2e/*.cy.js --fix",
+    "cy:open": "cypress open",
+    "test": "cypress run"
+  },
+  "keywords": [
+    "talking-about-testing",
+    "cypress",
+    "eslint-plugin-cypress",
+    "eslint",
+    "testing",
+    "web-testing"
+  ],
+  "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^12.9.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-cypress": "^2.13.2"
+  }
+}
