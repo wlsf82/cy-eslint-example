@@ -1,4 +1,4 @@
-describe('eslint-plugin-cypress ruless', () => {
+describe('eslint-plugin-cypress rules', () => {
   beforeEach(() => {
     cy.visit('./src/index.html')
   })
